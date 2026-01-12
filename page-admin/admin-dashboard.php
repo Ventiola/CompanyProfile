@@ -1,6 +1,13 @@
 <?php
-$require = "koneksi.php";
+require '../koneksi.php'; 
+
+$query = "SELECT COUNT(*) as total FROM dbnews"; 
+$result = mysqli_query($conn, $query);
+
+$data = mysqli_fetch_assoc($result);
+$totalBerita = $data['total']; 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +42,7 @@ $require = "koneksi.php";
                 </a>
             </li>
             <li>
-                <a href="page-admin/index.php" class="block px-3 py-2 rounded hover:bg-slate-700">
+                <a href="kelola.php" class="block px-3 py-2 rounded hover:bg-slate-700">
                     Kelola Berita
                 </a>
             </li>
@@ -53,7 +60,7 @@ $require = "koneksi.php";
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-white p-5 rounded shadow">
                 <p class="text-gray-500 text-sm">Total Berita</p>
-                <h3 class="text-2xl font-bold">--</h3>
+                <h3 class="text-2xl font-bold"><?= $totalBerita; ?></h3>
             </div>
 
             <div class="bg-white p-5 rounded shadow">

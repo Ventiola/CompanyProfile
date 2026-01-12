@@ -33,7 +33,7 @@ $require = "koneksi.php";
                     </a>
                 </li>
                 <li>
-                    <a href="page-admin/index.php" class="block px-3 py-2 rounded hover:bg-slate-700">
+                    <a href="kelola.php" class="block px-3 py-2 rounded hover:bg-slate-700">
                         Kelola Berita
                     </a>
                 </li>

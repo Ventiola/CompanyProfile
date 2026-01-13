@@ -24,9 +24,15 @@ $totalBerita = $data['total'];
     <nav class="bg-slate-800 text-white px-12 py-6 flex justify-between fixed w-full">
         <span>Logo</span>
         <ul class="flex items-left gap-4">
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li >
+                <a href="#beranda">Beranda</a>
+            </li>
+            <li>
+                <a href="#tentang">Tentang Kami</a>
+            </li>
+            <li>
+                <a href="#kontak">Hubungi Kami</a>
+            </li>
         </ul>
     </nav>
 
@@ -37,7 +43,7 @@ $totalBerita = $data['total'];
     <aside class="w-64 bg-slate-900 min-h-screen text-white px-4 py-8">
         <ul class="space-y-3">
             <li>
-                <a href="dashboard.php" class="block px-3 py-2 rounded bg-slate-700">
+                <a href="admin-dashboard.php" class="block px-3 py-2 rounded bg-slate-700">
                     Admin Dashboard
                 </a>
             </li>

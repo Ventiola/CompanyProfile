@@ -19,9 +19,15 @@ $result = mysqli_query($conn, $query);
     <nav class="bg-slate-800 text-white px-12 py-6 flex justify-between fixed w-full">
         <span>Logo</span>
         <ul class="flex items-left gap-4">
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li >
+                <a href="#beranda">Beranda</a>
+            </li>
+            <li>
+                <a href="#tentang">Tentang Kami</a>
+            </li>
+            <li>
+                <a href="#kontak">Hubungi Kami</a>
+            </li>
         </ul>
     </nav>
 
@@ -50,7 +56,7 @@ $result = mysqli_query($conn, $query);
         <main class="flex-1">
             <div class="min-h-screen px-36   py-8 flex flex-col mx-auto">
                 <h1 class="text-4xl text-black font-bold text-center mb-6 w-full">Kelola Berita</h1>
-<!-- 
+                <!-- 
                 <div class="text-right mb-6">
                     <a href="tambah-berita.php" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">
                         Tambah Berita
@@ -75,8 +81,12 @@ $result = mysqli_query($conn, $query);
                                     <td class="px-4 py-2"><?= $row['title']; ?></td>
                                     <td class="px-4 py-2"><?= date('d-m-Y', strtotime($row['created_at'])); ?></td>
                                     <td class="px-4 py-2">
-                                        <a href="" class="text-blue-500 hover:underline">Edit</a> |
-                                        <a href="" class="text-red-500 hover:underline">Hapus</a>
+                                        <a href="edit.php?id=<?= $row ['id'];?>" class="text-blue-500 hover:underline">Edit</a> |
+                                        <a href="proses-hapus.php?id=<?= $row['id']; ?>"
+                                            class="text-red-500 hover:underline"
+                                            onclick="return confirm('Yakin ingin menghapus berita ini?')">
+                                            Hapus
+                                        </a>
                                     </td>
                                 </tr>
                             <?php endwhile; ?>
